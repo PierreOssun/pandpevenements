@@ -1,0 +1,12 @@
+<div class="center jumbotron">
+  <h1>Propose & Participe</h1>
+  <% if logged_in? %>
+  <p><%= link_to "Evenements", events_path,class: "btn btn-lg btn-primary" %></p>
+  <% else %>
+  <h3>
+    Inscrits-toi pour voir et poster des événements
+  </h3>
+  <p><%= link_to "Inscription", new_user_path,class: "btn btn-lg btn-primary" %></p>
+    <p>Deja inscrit ? <%= link_to "Log in", '/login' %></p>
+</div>
+<% end %>

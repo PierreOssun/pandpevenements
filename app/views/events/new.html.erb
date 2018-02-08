@@ -1,0 +1,25 @@
+<% provide(:title, 'Event') %>
+  <% if logged_in? %>
+<h1>Propose ton événement</h1>
+
+<div class="row">
+ <div class="col-md-6 col-md-offset-3">
+   <%= form_for Event.new do |f| %>
+     <%= render 'shared/error_message_event' %>
+
+     <%= f.label :description %>
+     <%= f.text_area :description, class: 'form-control' %>
+     <br/>
+     <%= f.label :date %>
+     <%= f.datetime_select :date, class: 'form-control' %>
+     <br/>
+     <%= f.label :lieu %>
+     <%= f.text_field :place, class: 'form-control' %>
+     <br/>
+     <%= f.submit "Créer mon evenement", class: "btn btn-primary" %>
+   <% end %>
+ </div>
+</div>
+<% else %>
+<h3>Rejoins-nous pour Proposer ou Participer a un événement</h3>
+ <% end %>

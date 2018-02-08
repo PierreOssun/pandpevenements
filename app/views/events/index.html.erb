@@ -1,0 +1,28 @@
+<% provide(:title, 'Evenements a venir') %>
+  <% if logged_in? %>
+
+        <h1>Evenements</h1>
+
+        <table>
+         <tr>
+           <th><h3>|Description</h3></th>
+           <th><h3>|Date</h3></th>
+           <th><h3>|Lieu</h3></th>
+           <th><h3>|Proposé par</h3></th>
+           <th>|</th>
+         </tr>
+
+        <% @event.each do |event| %>
+           <tr>
+             <td>| <%= event.description %> </td>
+             <td>| <%= event.date %> </td>
+             <td>| <%= event.place %> </td>
+             <td>| <%= event.creator.name %> </td>
+             <td>| </td>
+              <% end %>
+           </tr>
+          </table>
+          <h3><%= link_to "Propose un événement",  new_event_path %></h3>
+          <% else %>
+<h3>Rejoins-nous pour Proposer ou Participer a un événement</h3>
+ <% end %>

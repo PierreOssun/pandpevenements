@@ -1,0 +1,13 @@
+<% provide(:title, @user.email) %>
+  <% if logged_in? %>
+<h1>
+  <%= @user.name %>
+</h1>
+
+<p>
+  <%= @user.email %>
+</p>
+<%= link_to "Propose un evenement",  new_event_path %>
+<% else %>
+<h3>Rejoins-nous pour Proposer ou Participer a un evenement</h3>
+ <% end %>
